@@ -35,8 +35,9 @@ def collect_initial_facts():
         facts.append("needs_ai_accel")
     if input("Do you travel often? (y/n): ").lower().startswith("y"):
         facts.append("travel_often")
-        
+
     # Find OS Preference of the user windows, macos, linux
+    # But windows rule is not given in the knowledge base in the rules file
     os_pref = input("Do you prefer Windows, macOS, or Linux? (w/m/l) \n w = Windows, m = macOS, l = Linux : ").lower()
     if os_pref.startswith("m"):
         facts.append("pref_os_macos")
@@ -44,7 +45,9 @@ def collect_initial_facts():
         facts.append("pref_os_linux")
     return facts
 
-    # In this I have Load rules, create engine, assert facts, and run inference and print results if no rules fired I have given default recommendation of basic_laptop
+    # In this I have Load rules, create engine, assert facts, and run 
+    # inference and print results if no rules fired I have given default 
+    # recommendation of basic_laptop
 def main():
 
     
